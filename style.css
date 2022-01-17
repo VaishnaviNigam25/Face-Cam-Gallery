@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.vid-con{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+video{
+    width: 100%;
+    height:100%;
+}
+.action-btn{
+   height: 12rem;
+   width: 5rem;
+   
+   position: absolute;
+   top: calc((100vh - 12rem)/2);
+   right: 4rem;
+   color: white; 
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.action-btn >*{
+    width: 100%;
+    height: 5rem;
+    border-radius: 50%;
+    border: 5px solid rgb(46, 45, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.capture-btn,.record-btn{
+background-color: rgb(65, 63, 63);
+}
+
+.capture{
+background-color: whitesmoke;
+width: 4rem;
+height: 4rem;
+border-radius: 50%;
+border: 3px solid black;
+}
+.record{
+    background-color: red;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    
+    }
+
+    /*ANIMATIONS 
+     */
+     .ani-record
+     {
+         animation-name: ani-record;
+         animation-iteration-count: infinite;
+          animation-duration: 1s  ;
+     }
+     .ani-capture{
+         animation-name: ani-record;
+         animation-iteration-count:1;
+         animation-duration: .5s;
+     }
+     @keyframes ani-record{
+         0%{
+       transform:  scale(0.8);
+         }
+        
+         100%
+         {
+             transform: scale(1.0);
+         }
+     }
