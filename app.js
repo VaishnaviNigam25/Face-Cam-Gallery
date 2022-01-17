@@ -42,10 +42,34 @@ recordBtnCont.addEventListener("click",(e)=>{
     if(recordFlag) // start
     {
         recorder.start();
+        startTimer();
         recordBtn.classList.add("ani-record");
     }
     else{ //stop
         recorder.stop();
+        stopTimer();
         recordBtn.classList.remove("ani-record");
     }
     })
+
+    // TIMER FUNCTIONS
+    let timer = document.querySelector(".timer");
+    let timerId,counter=0;
+    function startTimer()
+    {
+        function displayTimer(){
+            let hrs=Number.parseInt(counter/3600);
+            counter=counter%3600;
+            let min=Number.parseInt(counter/60);
+            let sec=counter%60;
+            timer.innerHTML =`${hrs}:${min}:${sec}`
+            counter++;
+            
+        }
+        timerId=setInterval(displayTimer,1000)
+    }
+    function stopTimer()
+    {
+        clearInterval(timerId);
+        timer.innerHTML="00:00:00";
+    }

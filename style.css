@@ -13,6 +13,7 @@ body{
 video{
     width: 100%;
     height:100%;
+    border:5px solid whitesmoke;
 }
 .action-btn{
    height: 12rem;
@@ -78,3 +79,12 @@ border: 3px solid black;
              transform: scale(1.0);
          }
      }
+
+     /* //TIMER */
+.timer-cont{
+    color:white;
+    position: absolute;
+    bottom: 8rem;
+    right: 3rem;
+    font-size: 2rem;
+}
