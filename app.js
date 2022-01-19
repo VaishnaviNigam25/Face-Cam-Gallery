@@ -52,6 +52,22 @@ recordBtnCont.addEventListener("click",(e)=>{
     }
     })
 
+    //capturing images using CANVAS API
+    captureBtnCont.addEventListener("click",(e)=>{
+        captureBtn.classList.add("ani-capture");
+        let canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        let tool = canvas.getContext("2d");
+        tool.drawImage(video,0,0,canvas.width,canvas.height);
+
+        let a =document.createElement("a");
+         a.href = canvas.toDataURL();
+         a.download="image.jpg"; 
+         a.click();
+         
+    })
+
     // TIMER FUNCTIONS
     let timer = document.querySelector(".timer");
     let timerId,counter=0;
